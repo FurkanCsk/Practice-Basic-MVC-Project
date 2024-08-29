@@ -1,0 +1,37 @@
+﻿@model Practice_Basic_MVC_Project.Models.CustomerOrderViewModel
+
+
+<html>
+<head>
+    <title>Customer and Orders</title>
+</head>
+<body>
+    <h2>Customer Details</h2>
+    <p><strong>Id:</strong> @Model.Customer.Id</p>
+    <p><strong>FirstName</strong> @Model.Customer.FirstName</p>
+    <p><strong>LastName</strong> @Model.Customer.LastName</p>
+    <p><strong>Email</strong> @Model.Customer.Email</p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Order Id</th>
+                <th>Name</th>
+                <th>Price </th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model.Orders)
+            {
+                <tr>
+                    <td>@order.Id</td>
+                    <td>@order.ProductName</td>
+                    <td>@order.Price</td>
+                    <td>@order.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>
